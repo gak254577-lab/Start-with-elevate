@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Review": {
+      "title": "Review",
+      "description": "User submitted reviews and client testimonials",
+      "type": "object",
+      "properties": {
+        "clientName": { "type": "string" },
+        "profession": { "type": "string" },
+        "program": { "type": "string" },
+        "duration": { "type": "string" },
+        "achievement": { "type": "string" },
+        "quote": { "type": "string" },
+        "rating": { "type": "number" },
+        "verified": { "type": "boolean" },
+        "avatar": { "type": "string" },
+        "beforeImage": { "type": "string" },
+        "afterImage": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["clientName", "quote", "rating"]
+    },
+    "Transformation": {
+      "title": "Transformation",
+      "description": "Before and after client photo transformations",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "durationWeeks": { "type": "number" },
+        "beforeWeight": { "type": "string" },
+        "afterWeight": { "type": "string" },
+        "fatLoss": { "type": "string" },
+        "muscleGain": { "type": "string" },
+        "program": { "type": "string" },
+        "beforeImage": { "type": "string" },
+        "afterImage": { "type": "string" },
+        "quote": { "type": "string" },
+        "routineHighlight": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "beforeImage", "afterImage"]
+    },
+    "GalleryPhoto": {
+      "title": "GalleryPhoto",
+      "description": "Community and gym uploaded photos",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "caption": { "type": "string" },
+        "uploadedBy": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["imageUrl", "title"]
+    }
+  },
+  "firestore": {
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Public verified client reviews and testimonials"
+    },
+    "/transformations/{transformationId}": {
+      "schema": "Transformation",
+      "description": "Public before and after transformation showcases"
+    },
+    "/gallery/{photoId}": {
+      "schema": "GalleryPhoto",
+      "description": "Public gallery photos uploaded by members and trainers"
+    }
+  }
+}
