@@ -15,9 +15,9 @@ import {
 import { IMAGES } from '../constants/images';
 
 export const DEFAULT_TRAINER_PROFILE: TrainerProfile = {
-  name: 'START WITH ELEVATE ',
+  name: 'START WITH ELEVATE 77',
   tagline: 'Elite Strength & Body Transformation Specialist',
-  heroHeadline: 'Transform Your Body with START WITH ELEVATE',
+  heroHeadline: 'Transform Your Body with START WITH ELEVATE 77',
   heroSubheadline: 'Science-backed personal training, bespoke nutrition coaching, and unstoppable habit formation engineered to build your strongest, leanest physique with Shubham Singh.',
   gymName: 'Shubham Singh',
   yearsOfExperience: 8,

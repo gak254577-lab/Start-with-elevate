@@ -78,18 +78,18 @@ interface TrainerContextType {
 
 const TrainerContext = createContext<TrainerContextType | undefined>(undefined);
 
-const LOCAL_STORAGE_KEY = 'apex_gym_trainer_profile_v15';
-const LOCAL_STORAGE_PASSES_KEY = 'apex_gym_trainer_passes_v15';
-const LOCAL_STORAGE_CURRENCY_KEY = 'apex_gym_currency_v15';
-const LOCAL_STORAGE_THEME_KEY = 'apex_gym_theme_yellow_v15';
-const LOCAL_STORAGE_TESTIMONIALS_KEY = 'apex_gym_testimonials_cleared_v15';
-const LOCAL_STORAGE_TRANSFORMATIONS_KEY = 'apex_gym_transformations_v15';
-const LOCAL_STORAGE_GALLERY_KEY = 'apex_gym_gallery_v15';
+const LOCAL_STORAGE_KEY = 'apex_gym_trainer_profile_v16';
+const LOCAL_STORAGE_PASSES_KEY = 'apex_gym_trainer_passes_v16';
+const LOCAL_STORAGE_CURRENCY_KEY = 'apex_gym_currency_v16';
+const LOCAL_STORAGE_THEME_KEY = 'apex_gym_theme_yellow_v16';
+const LOCAL_STORAGE_TESTIMONIALS_KEY = 'apex_gym_testimonials_cleared_v16';
+const LOCAL_STORAGE_TRANSFORMATIONS_KEY = 'apex_gym_transformations_v16';
+const LOCAL_STORAGE_GALLERY_KEY = 'apex_gym_gallery_v16';
 
 export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [profile, setProfile] = useState<TrainerProfile>(() => {
     try {
-      const saved = localStorage.getItem(LOCAL_STORAGE_KEY) || localStorage.getItem('apex_gym_trainer_profile_v14') || localStorage.getItem('apex_gym_trainer_profile_v13') || localStorage.getItem('apex_gym_trainer_profile_v12');
+      const saved = localStorage.getItem(LOCAL_STORAGE_KEY) || localStorage.getItem('apex_gym_trainer_profile_v15') || localStorage.getItem('apex_gym_trainer_profile_v14') || localStorage.getItem('apex_gym_trainer_profile_v13') || localStorage.getItem('apex_gym_trainer_profile_v12');
       if (saved) {
         const parsed = JSON.parse(saved);
         // Sanitize legacy phone number if present
@@ -103,8 +103,11 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
             parsed.openingHours.sunday = 'CLOSED';
           }
         }
-        if (parsed.name === 'Subham Singh' || parsed.name === 'Shubham Singh' || parsed.name === 'Subham' || parsed.name === 'Start the Elevate') {
-          parsed.name = 'START WITH ELEVATE';
+        if (parsed.name === 'Subham Singh' || parsed.name === 'Shubham Singh' || parsed.name === 'Subham' || parsed.name === 'Start the Elevate' || parsed.name === 'START WITH ELEVATE') {
+          parsed.name = DEFAULT_TRAINER_PROFILE.name;
+        }
+        if (parsed.heroHeadline === 'Transform Your Body with START WITH ELEVATE') {
+          parsed.heroHeadline = DEFAULT_TRAINER_PROFILE.heroHeadline;
         }
         if (parsed.gymName === 'Wave Fitness' || !parsed.gymName) {
           parsed.gymName = 'Shubham Singh';

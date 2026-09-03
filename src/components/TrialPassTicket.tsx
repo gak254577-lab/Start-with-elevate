@@ -7,7 +7,6 @@ import {
   Clock,
   MapPin,
   Sparkles,
-  Download,
   MessageSquare,
   ExternalLink
 } from 'lucide-react';
@@ -20,10 +19,6 @@ interface TrialPassTicketProps {
 
 export const TrialPassTicket: React.FC<TrialPassTicketProps> = ({ pass, onClose }) => {
   const { currentThemeConfig, profile } = useTrainer();
-
-  const handlePrint = () => {
-    window.print();
-  };
 
   const whatsappMessage = encodeURIComponent(
     `🔥 *New 60-Min Trial Session Booking*\n\n` +
@@ -170,14 +165,6 @@ export const TrialPassTicket: React.FC<TrialPassTicketProps> = ({ pass, onClose 
 
         {/* Actions */}
         <div className="pt-2 flex gap-2">
-          <button
-            onClick={handlePrint}
-            className="flex-1 py-2.5 bg-stone-800 hover:bg-stone-700 text-stone-200 rounded-lg text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-          >
-            <Download className="w-3.5 h-3.5" style={{ color: currentThemeConfig.primaryHex }} />
-            <span>Print / Save Pass</span>
-          </button>
-
           {onClose && (
             <button
               onClick={onClose}
