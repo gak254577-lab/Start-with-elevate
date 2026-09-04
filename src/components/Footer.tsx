@@ -12,7 +12,7 @@ import {
 import { WaveFitnessLogo } from './WaveFitnessLogo';
 
 export const Footer: React.FC = () => {
-  const { profile, openTrialModal, currentThemeConfig } = useTrainer();
+  const { profile, currentThemeConfig } = useTrainer();
 
   const handleNavClick = (href: string) => {
     if (href === '#home') {
@@ -40,43 +40,6 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-stone-950 text-stone-300 border-t border-stone-800 relative overflow-hidden text-left">
       
-      {/* Top Banner / Callout */}
-      <div className="border-b border-stone-800 py-12 px-4 sm:px-6 lg:px-8 bg-stone-900/80">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <span className={`text-xs font-black uppercase tracking-wider block mb-1 ${currentThemeConfig.textClass}`}>
-              Ready to begin your transformation?
-            </span>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-100">
-              Claim Your Free 60-Minute 1-on-1 Trial Session Today
-            </h3>
-            <p className="text-xs sm:text-sm text-stone-400 mt-1 max-w-xl">
-              Includes comprehensive posture screen, movement assessment, and a custom nutritional breakdown.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              onClick={() => openTrialModal()}
-              className={`py-3.5 px-6 font-black rounded-xl text-sm shadow-xl transition-all ${currentThemeConfig.buttonClass}`}
-            >
-              Book Free Trial
-            </button>
-            <a
-              href={`https://wa.me/${profile.whatsappNumber}?text=Hi%20${encodeURIComponent(
-                profile.name
-              )},%20I%20would%20like%20to%20book%20a%20free%20trial.`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="py-3.5 px-5 bg-emerald-950 hover:bg-emerald-900 text-emerald-300 border border-emerald-800/60 rounded-xl text-sm font-bold flex items-center gap-2 transition-colors"
-            >
-              <MessageSquare className="w-4 h-4 text-emerald-400" />
-              <span>WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Links & Info Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">

@@ -68,7 +68,7 @@ const MainLayout: React.FC = () => {
       <Navbar />
 
       {/* Main Content Sections */}
-      <main className="flex-1 pb-28 sm:pb-12">
+      <main className="flex-1">
         {/* 1. Hero Section */}
         <div id="home">
           <Hero />
