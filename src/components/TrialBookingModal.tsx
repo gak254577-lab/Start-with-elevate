@@ -145,7 +145,7 @@ export const TrialBookingModal: React.FC = () => {
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Alex Morgan"
+                    placeholder=""
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-100 text-sm focus:outline-none focus:border-stone-600 shadow-inner"
@@ -159,7 +159,7 @@ export const TrialBookingModal: React.FC = () => {
                   <input
                     type="tel"
                     required
-                    placeholder="e.g. +1 555-0192"
+                    placeholder=""
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-100 text-sm focus:outline-none focus:border-stone-600 shadow-inner"
@@ -174,7 +174,7 @@ export const TrialBookingModal: React.FC = () => {
                 <input
                   type="email"
                   required
-                  placeholder="startwithelevate77@gmail.com"
+                  placeholder=""
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-100 text-sm focus:outline-none focus:border-stone-600 shadow-inner"

@@ -329,7 +329,7 @@ export const ContactSection: React.FC = () => {
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Alex Morgan"
+                        placeholder=""
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         className="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 text-sm focus:outline-none focus:border-stone-600 transition-colors shadow-inner"
@@ -343,7 +343,7 @@ export const ContactSection: React.FC = () => {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +1 (555) 000-0000"
+                        placeholder=""
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 text-sm focus:outline-none focus:border-stone-600 transition-colors shadow-inner"
@@ -359,7 +359,7 @@ export const ContactSection: React.FC = () => {
                     <input
                       type="email"
                       required
-                      placeholder="startwithelevate77@gmail.com"
+                      placeholder=""
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full bg-stone-950 border border-stone-800 rounded-xl px-4 py-3 text-stone-100 text-sm focus:outline-none focus:border-stone-600 transition-colors shadow-inner"

@@ -6,18 +6,13 @@ import {
   Calendar,
   Menu,
   X,
-  SlidersHorizontal,
 } from 'lucide-react';
-import { ThemeId } from '../types';
 import { WaveFitnessLogo } from './WaveFitnessLogo';
 
 export const Navbar: React.FC = () => {
   const {
     profile,
     openTrialModal,
-    openConfigModal,
-    theme,
-    setTheme,
     currentThemeConfig,
   } = useTrainer();
 
@@ -58,15 +53,6 @@ export const Navbar: React.FC = () => {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
-
-  const themesList: { id: ThemeId; label: string; color: string }[] = [
-    { id: 'yellow', label: 'Cyber Yellow', color: '#facc15' },
-    { id: 'volt', label: 'Volt Carbon', color: '#a3e635' },
-    { id: 'crimson', label: 'Crimson Power', color: '#ef4444' },
-    { id: 'gold', label: 'Royal Gold', color: '#f59e0b' },
-    { id: 'cyan', label: 'Cyber Frost', color: '#06b6d4' },
-    { id: 'sunset', label: 'Sunset Blaze', color: '#f97316' },
-  ];
 
   return (
     <>
@@ -191,29 +177,6 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="fixed inset-x-0 top-[64px] z-30 bg-stone-950/95 backdrop-blur-2xl border-b border-stone-800 p-6 shadow-2xl lg:hidden animate-in fade-in slide-in-from-top-4 duration-200">
           
-          {/* Quick Theme Switch in Mobile Menu */}
-          <div className="mb-4 p-3 rounded-xl bg-stone-900 border border-stone-800">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-stone-400 block mb-2">
-              Color Aesthetic:
-            </span>
-            <div className="flex flex-wrap gap-1.5">
-              {themesList.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => setTheme(t.id)}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-bold flex items-center gap-1.5 border transition-all ${
-                    theme === t.id
-                      ? 'bg-stone-800 text-stone-100 border-stone-600'
-                      : 'bg-stone-950 text-stone-400 border-stone-800 hover:text-stone-200'
-                  }`}
-                >
-                  <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: t.color }}></span>
-                  <span>{t.label.split(' ')[0]}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-
           <nav className="flex flex-col gap-3 mb-6">
             {navLinks.map((link) => (
               <a
@@ -264,16 +227,6 @@ export const Navbar: React.FC = () => {
               </a>
             </div>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openConfigModal();
-              }}
-              className="mt-1 py-2 text-xs text-stone-400 hover:text-stone-200 flex items-center justify-center gap-1.5"
-            >
-              <SlidersHorizontal className="w-3.5 h-3.5" />
-              <span>Edit Trainer / Gym Info Demo</span>
-            </button>
           </div>
         </div>
       )}

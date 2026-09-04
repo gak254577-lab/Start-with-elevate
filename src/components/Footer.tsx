@@ -13,7 +13,7 @@ import {
 import { WaveFitnessLogo } from './WaveFitnessLogo';
 
 export const Footer: React.FC = () => {
-  const { profile, openTrialModal, openConfigModal, currentThemeConfig } = useTrainer();
+  const { profile, openTrialModal, currentThemeConfig } = useTrainer();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -236,9 +236,6 @@ export const Footer: React.FC = () => {
         <div className="mt-6 pt-6 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-3">
           <p>© {new Date().getFullYear()} {profile.gymName} • {profile.name}. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <button onClick={openConfigModal} className={`hover:underline transition-colors ${currentThemeConfig.textClass}`}>
-              Customize Trainer & Theme
-            </button>
             <span>•</span>
             <a href="#contact" className="hover:text-stone-300 transition-colors">
               Terms & Privacy

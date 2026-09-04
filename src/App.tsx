@@ -16,7 +16,6 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { TrialBookingModal } from './components/TrialBookingModal';
 import { BMICalculatorModal } from './components/BMICalculatorModal';
-import { TrainerConfigModal } from './components/TrainerConfigModal';
 import {
   MessageSquare,
   ChevronUp
@@ -103,7 +102,6 @@ const MainLayout: React.FC = () => {
       {/* Global Modals & Drawers */}
       <TrialBookingModal />
       <BMICalculatorModal />
-      <TrainerConfigModal />
 
       {/* Floating Action Controls (Visible Across Entire Website on Desktop, Tablet & Mobile) */}
       <div className="fixed right-5 bottom-6 z-50 flex items-center gap-3">

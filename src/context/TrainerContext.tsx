@@ -62,9 +62,6 @@ interface TrainerContextType {
   selectedPlanForTrial: string | null;
   openTrialModal: (planId?: string) => void;
   closeTrialModal: () => void;
-  isConfigModalOpen: boolean;
-  openConfigModal: () => void;
-  closeConfigModal: () => void;
   isBMICalculatorOpen: boolean;
   openBMICalculator: () => void;
   closeBMICalculator: () => void;
@@ -72,8 +69,6 @@ interface TrainerContextType {
   setActivePass: (pass: TrialPass | null) => void;
   savedPasses: TrialPass[];
   saveTrialPass: (pass: TrialPass) => void;
-  updateProfile: (updated: Partial<TrainerProfile>) => void;
-  resetAllDefaults: () => void;
 }
 
 const TrainerContext = createContext<TrainerContextType | undefined>(undefined);
@@ -215,7 +210,6 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [selectedPlanForTrial, setSelectedPlanForTrial] = useState<string | null>(null);
-  const [isConfigModalOpen, setIsConfigModalOpen] = useState(false);
   const [isBMICalculatorOpen, setIsBMICalculatorOpen] = useState(false);
   const [activePass, setActivePass] = useState<TrialPass | null>(null);
 
@@ -399,40 +393,12 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setSelectedPlanForTrial(null);
   };
 
-  const openConfigModal = () => setIsConfigModalOpen(true);
-  const closeConfigModal = () => setIsConfigModalOpen(false);
-
   const openBMICalculator = () => setIsBMICalculatorOpen(true);
   const closeBMICalculator = () => setIsBMICalculatorOpen(false);
 
   const saveTrialPass = (pass: TrialPass) => {
     setSavedPasses((prev) => [pass, ...prev]);
     setActivePass(pass);
-  };
-
-  const updateProfile = (updated: Partial<TrainerProfile>) => {
-    setProfile((prev) => ({
-      ...prev,
-      ...updated,
-      name: DEFAULT_TRAINER_PROFILE.name,
-      heroHeadline: DEFAULT_TRAINER_PROFILE.heroHeadline,
-      email: DEFAULT_TRAINER_PROFILE.email,
-    }));
-  };
-
-  const resetAllDefaults = () => {
-    setProfile(DEFAULT_TRAINER_PROFILE);
-    setTestimonials(DEFAULT_TESTIMONIALS);
-    setTransformations(DEFAULT_TRANSFORMATIONS);
-    setGallery(DEFAULT_GALLERY);
-    setThemeState('yellow');
-    setCurrencyState('INR');
-    localStorage.removeItem(LOCAL_STORAGE_KEY);
-    localStorage.removeItem(LOCAL_STORAGE_CURRENCY_KEY);
-    localStorage.removeItem(LOCAL_STORAGE_THEME_KEY);
-    localStorage.removeItem(LOCAL_STORAGE_TESTIMONIALS_KEY);
-    localStorage.removeItem(LOCAL_STORAGE_TRANSFORMATIONS_KEY);
-    localStorage.removeItem(LOCAL_STORAGE_GALLERY_KEY);
   };
 
   return (
@@ -461,9 +427,6 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
         selectedPlanForTrial,
         openTrialModal,
         closeTrialModal,
-        isConfigModalOpen,
-        openConfigModal,
-        closeConfigModal,
         isBMICalculatorOpen,
         openBMICalculator,
         closeBMICalculator,
@@ -471,8 +434,6 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
         setActivePass,
         savedPasses,
         saveTrialPass,
-        updateProfile,
-        resetAllDefaults,
       }}
     >
       {children}
