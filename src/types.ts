@@ -71,6 +71,7 @@ export interface PricingPlan {
   name: string;
   tagline: string;
   priceINR: number;
+  originalPriceINR?: number;
   priceUSD: number;
   period: string; // e.g. "per month", "per 3 months", "per session"
   isPopular?: boolean;

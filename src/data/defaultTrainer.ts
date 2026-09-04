@@ -232,6 +232,7 @@ export const DEFAULT_PRICING_PLANS: PricingPlan[] = [
     name: 'Single Kickstart Session',
     tagline: 'Ideal for form audits or a test drive before committing to a full program.',
     priceINR: 9999,
+    originalPriceINR: 12000,
     priceUSD: 65,
     period: 'for 1 month',
     badge: 'Starter',
