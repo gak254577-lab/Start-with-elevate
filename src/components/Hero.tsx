@@ -143,7 +143,7 @@ export const Hero: React.FC = () => {
                 <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-stone-950/85 backdrop-blur-md border border-stone-800 text-left shadow-2xl">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="text-stone-100 font-black text-lg">{profile.name}</h3>
+                      <h3 className="text-stone-100 font-black text-lg">SHUBHAM SINGH</h3>
                       <p className={`text-xs font-semibold ${currentThemeConfig.textClass}`}>{profile.tagline}</p>
                     </div>
                     <span
