@@ -76,20 +76,20 @@ export const Pricing: React.FC = () => {
                 <div className="mt-5 pb-5 border-b border-stone-800/80">
                   <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                     <span className="text-3xl sm:text-4xl font-black tracking-tight" style={{ color: currentThemeConfig.primaryHex }}>
-                      {formatPrice(plan.priceINR, plan.priceUSD)}
+                      {formatPrice(plan.discountedPrice, plan.priceUSD)}
                     </span>
+                    {plan.actualPrice && plan.actualPrice > plan.discountedPrice && (
+                      <>
+                        <span className="text-sm font-semibold line-through" style={{ color: currentThemeConfig.primaryHex }}>
+                          {formatPrice(plan.actualPrice, plan.priceUSD)}
+                        </span>
+                        <span className="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-stone-400">
+                          {Math.round(((plan.actualPrice - plan.discountedPrice) / plan.actualPrice) * 100)}% Off
+                        </span>
+                      </>
+                    )}
                     <span className="text-xs text-stone-400 font-medium">/{plan.period}</span>
                   </div>
-                  {plan.originalPriceINR && plan.originalPriceINR > plan.priceINR && (
-                    <div className="mt-1.5 flex flex-wrap items-center gap-2">
-                      <span className="rounded-md border border-stone-700 bg-stone-800/70 px-2 py-1 text-sm font-semibold text-stone-300 line-through">
-                        {formatPrice(plan.originalPriceINR, plan.priceUSD)}
-                      </span>
-                      <span className="rounded-full border border-stone-700 bg-stone-900 px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-stone-400">
-                        Offer
-                      </span>
-                    </div>
-                  )}
                   <div className="text-[11px] text-emerald-400 font-semibold mt-1 flex items-center gap-1">
                     <span>✓ Includes full gym access & amenities</span>
                   </div>
