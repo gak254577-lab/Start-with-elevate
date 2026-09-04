@@ -174,7 +174,7 @@ export const TrialBookingModal: React.FC = () => {
                 <input
                   type="email"
                   required
-                  placeholder="alex@example.com"
+                  placeholder="startwithelevate77@gmail.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full bg-stone-950 border border-stone-800 rounded-lg px-3 py-2 text-stone-100 text-sm focus:outline-none focus:border-stone-600 shadow-inner"

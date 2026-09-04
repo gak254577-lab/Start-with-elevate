@@ -28,7 +28,7 @@ export const DEFAULT_TRAINER_PROFILE: TrainerProfile = {
   city: 'Ghaziabad, Uttar Pradesh 201013',
   phone: '+91 92207 57773',
   formattedPhone: '+91 92207 57773',
-  email: 'contact@wavefitness.in',
+  email: 'startwithelevate77@gmail.com',
   instagramHandle: '@start_with_elevate_77',
   instagramUrl: 'https://www.instagram.com/start_with_elevate_77',
   youtubeUrl: 'https://www.youtube.com/@STARTWITHELEVATE77',

@@ -119,6 +119,7 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
         if (!parsed.youtubeUrl || parsed.youtubeUrl === 'https://youtube.com') {
           parsed.youtubeUrl = 'https://www.youtube.com/@STARTWITHELEVATE77';
         }
+        parsed.email = DEFAULT_TRAINER_PROFILE.email;
         if (parsed.facebookUrl) {
           delete parsed.facebookUrl;
         }
@@ -236,6 +237,11 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
 
   // Connect Firebase Real-time Synchronization on Mount
   useEffect(() => {
+    setProfile((prev) => ({
+      ...prev,
+      email: DEFAULT_TRAINER_PROFILE.email,
+    }));
+
     // 1. Live Reviews listener
     const unsubReviews = subscribeToCloudReviews((cloudReviews) => {
       // Filter out any legacy IDs
@@ -409,7 +415,11 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   const updateProfile = (updated: Partial<TrainerProfile>) => {
-    setProfile((prev) => ({ ...prev, ...updated }));
+    setProfile((prev) => ({
+      ...prev,
+      ...updated,
+      email: DEFAULT_TRAINER_PROFILE.email,
+    }));
   };
 
   const resetAllDefaults = () => {
