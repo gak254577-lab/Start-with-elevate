@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
               </div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-800/60 text-[11px] font-bold text-emerald-400">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                <span>Open for 1-on-1 Sessions</span>
+                <span>Online & Offline Sessions</span>
               </div>
             </div>
 
