@@ -292,7 +292,7 @@ export const DEFAULT_PRICING_PLANS: PricingPlan[] = [
     tagline: 'Total lifestyle integration for committed individuals seeking peak athletic performance.',
     priceINR: 59999,
     priceUSD: 2799,
-    period: 'per year',
+    period: 'for 6 months',
     badge: 'Ultimate',
     features: [
       'Unlimited 1-on-1 Training Sessions (Up to 4x/week)',
