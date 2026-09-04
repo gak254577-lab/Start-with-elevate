@@ -103,12 +103,8 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
             parsed.openingHours.sunday = 'CLOSED';
           }
         }
-        if (parsed.name === 'Subham Singh' || parsed.name === 'Shubham Singh' || parsed.name === 'Subham' || parsed.name === 'Start the Elevate' || parsed.name === 'START WITH ELEVATE') {
-          parsed.name = DEFAULT_TRAINER_PROFILE.name;
-        }
-        if (parsed.heroHeadline === 'Transform Your Body with START WITH ELEVATE') {
-          parsed.heroHeadline = DEFAULT_TRAINER_PROFILE.heroHeadline;
-        }
+        parsed.name = DEFAULT_TRAINER_PROFILE.name;
+        parsed.heroHeadline = DEFAULT_TRAINER_PROFILE.heroHeadline;
         if (parsed.gymName === 'Wave Fitness' || !parsed.gymName) {
           parsed.gymName = 'Shubham Singh';
         }
@@ -418,6 +414,8 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
     setProfile((prev) => ({
       ...prev,
       ...updated,
+      name: DEFAULT_TRAINER_PROFILE.name,
+      heroHeadline: DEFAULT_TRAINER_PROFILE.heroHeadline,
       email: DEFAULT_TRAINER_PROFILE.email,
     }));
   };
