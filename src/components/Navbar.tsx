@@ -75,14 +75,14 @@ export const Navbar: React.FC = () => {
             }}
           >
             <div className="relative">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center font-black transition-transform group-hover:scale-105 shadow-xl bg-black border border-stone-800 p-0.5">
+              <div className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center font-black transition-transform group-hover:scale-105 shadow-xl bg-black border border-stone-800 p-0.5">
                 <WaveFitnessLogo
                   variant="full"
-                  size={44}
+                  size={56}
                 />
               </div>
               <div
-                className="absolute -inset-0.5 rounded-xl opacity-40 group-hover:opacity-80 blur transition duration-300 -z-10"
+                className="absolute -inset-0.5 rounded-full opacity-40 group-hover:opacity-80 blur transition duration-300 -z-10"
                 style={{ backgroundColor: currentThemeConfig.primaryHex }}
               ></div>
             </div>

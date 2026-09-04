@@ -47,10 +47,10 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center font-black shadow-lg bg-black border border-stone-800 p-0.5">
+              <div className="w-14 h-14 rounded-full overflow-hidden flex items-center justify-center font-black shadow-lg bg-black border border-stone-800 p-0.5">
                 <WaveFitnessLogo
                   variant="full"
-                  size={44}
+                  size={56}
                 />
               </div>
               <div>

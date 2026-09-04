@@ -93,10 +93,10 @@ export const TrialBookingModal: React.FC = () => {
         {/* Header */}
         <div className="p-4 sm:p-6 bg-stone-950 border-b border-stone-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-black border border-stone-800 flex items-center justify-center p-0.5 shadow-md">
+            <div className="w-12 h-12 rounded-full overflow-hidden bg-black border border-stone-800 flex items-center justify-center p-0.5 shadow-md">
               <WaveFitnessLogo
                 variant="full"
-                size={36}
+                size={48}
               />
             </div>
             <div>

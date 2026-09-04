@@ -46,11 +46,11 @@ export const IMAGES = {
  * update the logo everywhere across the site.
  */
 export const LOGOS = {
-  main: '/logo/logo.svg',
-  full: '/logo/logo-full.svg',
-  icon: '/logo/logo-icon.svg',
-  waveFitness: '/logo/wave-fitness-logo.svg',
-  favicon: '/logo/favicon.svg',
+  main: '/logo/Start-with-elevate-77.png',
+  full: '/logo/Start-with-elevate-77.png',
+  icon: '/logo/Start-with-elevate-77.png',
+  waveFitness: '/logo/Start-with-elevate-77.png',
+  favicon: '/logo/Start-with-elevate-77.png',
 } as const;
 
 export type ImageKey = keyof typeof IMAGES;
