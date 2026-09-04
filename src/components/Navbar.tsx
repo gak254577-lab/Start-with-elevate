@@ -58,14 +58,13 @@ export const Navbar: React.FC = () => {
     <>
       {/* Main sticky navigation bar */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled
             ? 'bg-stone-950/90 backdrop-blur-md border-b border-stone-800/80 shadow-2xl shadow-black/60 py-3'
             : 'bg-stone-950/75 backdrop-blur-sm border-b border-stone-800/40 py-4'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          
+
           {/* Logo & Gym Name */}
           <a
             href="#"
@@ -76,7 +75,7 @@ export const Navbar: React.FC = () => {
             }}
           >
             <div className="relative">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center font-black transition-transform group-hover:scale-105 shadow-xl bg-black border border-stone-800 p-0.5">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center font-black transition-transform group-hover:scale-105 shadow-xl bg-black border border-stone-800 p-0.5">
                 <WaveFitnessLogo
                   variant="full"
                   size={44}
@@ -88,7 +87,7 @@ export const Navbar: React.FC = () => {
               ></div>
             </div>
             <div>
-              <span className="text-lg sm:text-xl font-black tracking-tight text-stone-100 flex items-center gap-1.5 leading-tight">
+              <span className="text-sm sm:text-lg lg:text-xl font-black tracking-tight text-stone-100 flex items-center gap-1.5 leading-tight whitespace-nowrap">
                 {profile.name}
               </span>
               <span className={`text-xs font-semibold block leading-none ${currentThemeConfig.textClass}`}>
@@ -176,7 +175,7 @@ export const Navbar: React.FC = () => {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-x-0 top-[64px] z-30 bg-stone-950/95 backdrop-blur-2xl border-b border-stone-800 p-6 shadow-2xl lg:hidden animate-in fade-in slide-in-from-top-4 duration-200">
-          
+
           <nav className="flex flex-col gap-3 mb-6">
             {navLinks.map((link) => (
               <a

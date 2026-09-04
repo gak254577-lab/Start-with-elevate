@@ -7,17 +7,12 @@ import {
   MapPin,
   Instagram,
   Youtube,
-  ArrowUp,
   Heart
 } from 'lucide-react';
 import { WaveFitnessLogo } from './WaveFitnessLogo';
 
 export const Footer: React.FC = () => {
   const { profile, openTrialModal, currentThemeConfig } = useTrainer();
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const handleNavClick = (href: string) => {
     if (href === '#home') {
@@ -222,14 +217,6 @@ export const Footer: React.FC = () => {
             <span className="bg-stone-900 px-2 py-0.5 rounded border border-stone-800/50">Free Gym Trial Pass</span>
           </div>
 
-          <button
-            onClick={scrollToTop}
-            className="p-2 rounded-lg bg-stone-900 hover:bg-stone-800 text-stone-400 hover:text-white transition-colors flex items-center gap-1"
-            title="Scroll to top"
-          >
-            <ArrowUp className="w-3.5 h-3.5" />
-            <span>Top</span>
-          </button>
         </div>
 
         {/* Bottom copyright line */}

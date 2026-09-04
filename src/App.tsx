@@ -17,19 +17,16 @@ import { Footer } from './components/Footer';
 import { TrialBookingModal } from './components/TrialBookingModal';
 import { BMICalculatorModal } from './components/BMICalculatorModal';
 import {
-  MessageSquare,
-  ChevronUp
+  MessageSquare
 } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
   const { profile, openTrialModal, openBMICalculator, currentThemeConfig } = useTrainer();
   const [activeSection, setActiveSection] = useState<string>('home');
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setShowScrollTop(scrollY > 400);
 
       const sections = ['home', 'services', 'pricing', 'transformations', 'gallery', 'faq', 'contact'];
       for (const section of sections) {
@@ -103,34 +100,21 @@ const MainLayout: React.FC = () => {
       <TrialBookingModal />
       <BMICalculatorModal />
 
-      {/* Floating Action Controls (Visible Across Entire Website on Desktop, Tablet & Mobile) */}
-      <div className="fixed right-5 bottom-6 z-50 flex items-center gap-3">
-        {showScrollTop && (
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="w-10 h-10 rounded-xl bg-stone-900/90 text-stone-300 border border-stone-800 hover:border-stone-700 hover:text-white flex items-center justify-center shadow-2xl backdrop-blur-md transition-all active:scale-95"
-            aria-label="Scroll to top"
-          >
-            <ChevronUp className="w-5 h-5" />
-          </button>
-        )}
-
-        {/* Floating Dark Outlined WhatsApp Button */}
-        <a
-          href={`https://wa.me/${profile.whatsappNumber}?text=Hi%20${encodeURIComponent(
-            profile.name
-          )},%20I'm%20interested%20in%20a%20free%20trial%20session%20at%20${encodeURIComponent(
-            profile.gymName
-          )}.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-10 px-3.5 rounded-2xl bg-stone-950/90 hover:bg-stone-900 border border-emerald-500/80 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 font-bold text-sm flex items-center gap-2 shadow-2xl backdrop-blur-md hover:scale-105 active:scale-95 transition-all duration-200"
-          aria-label="Chat on WhatsApp"
-        >
-          <MessageSquare className="w-4 h-4 stroke-[2.2] text-emerald-400" />
-          <span className="font-bold tracking-tight whitespace-nowrap">WhatsApp</span>
-        </a>
-      </div>
+      {/* Floating Dark Outlined WhatsApp Button */}
+      <a
+        href={`https://wa.me/${profile.whatsappNumber}?text=Hi%20${encodeURIComponent(
+          profile.name
+        )},%20I'm%20interested%20in%20a%20free%20trial%20session%20at%20${encodeURIComponent(
+          profile.gymName
+        )}.`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed right-5 bottom-6 z-50 h-10 px-3.5 rounded-2xl bg-stone-950/90 hover:bg-stone-900 border border-emerald-500/80 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 font-bold text-sm flex items-center gap-2 shadow-2xl backdrop-blur-md hover:scale-105 active:scale-95 transition-all duration-200"
+        aria-label="Chat on WhatsApp"
+      >
+        <MessageSquare className="w-4 h-4 stroke-[2.2] text-emerald-400" />
+        <span className="font-bold tracking-tight whitespace-nowrap">WhatsApp</span>
+      </a>
     </div>
   );
 };
