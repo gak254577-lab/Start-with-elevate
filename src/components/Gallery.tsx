@@ -51,7 +51,7 @@ export const Gallery: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl space-y-3 mb-10">
+          <div className="text-center max-w-2xl mx-auto space-y-3 mb-10">
           <div
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider border"
             style={{

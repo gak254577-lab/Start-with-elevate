@@ -19,6 +19,11 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleScrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -145,7 +150,7 @@ export const Navbar: React.FC = () => {
 
             {/* Book Free Trial button */}
             <button
-              onClick={() => openTrialModal()}
+              onClick={handleScrollToContact}
               className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl shadow-lg transition-all text-sm font-bold active:scale-95 group ${currentThemeConfig.buttonClass}`}
             >
               <Calendar className="w-4 h-4 group-hover:scale-110 transition-transform" />
@@ -156,7 +161,7 @@ export const Navbar: React.FC = () => {
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
-              onClick={() => openTrialModal()}
+              onClick={handleScrollToContact}
               className={`sm:hidden text-xs font-black px-3 py-1.5 rounded-lg shadow ${currentThemeConfig.buttonClass}`}
             >
               Free Trial

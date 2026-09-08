@@ -3,7 +3,6 @@ import { useTrainer } from '../context/TrainerContext';
 import {
   Calendar,
   Award,
-  Users,
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
@@ -99,7 +98,7 @@ export const Hero: React.FC = () => {
             {/* CTA Buttons Row - Responsive Ergonomics */}
             <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <button
-                onClick={() => openTrialModal()}
+                onClick={() => handleScrollToSection('contact')}
                 className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-xl shadow-xl hover:-translate-y-0.5 active:scale-95 transition-all text-sm font-black group ${currentThemeConfig.buttonClass}`}
               >
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
@@ -129,11 +128,11 @@ export const Hero: React.FC = () => {
                 style={{ backgroundColor: currentThemeConfig.primaryHex }}
               />
 
-              <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 shadow-2xl aspect-[4/5] group">
+              <div className="relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 shadow-2xl aspect-[2/3] group">
                 <img
                   src={profile.trainerHeroImage}
                   alt={`${profile.name} - Head Coach`}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter brightness-95 contrast-105"
+                  className="w-full h-full object-contain object-center filter brightness-95 contrast-105"
                 />
                 
                 {/* Dark bottom gradient overlay */}
@@ -175,18 +174,6 @@ export const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Floating pill: Success Count */}
-                <div className="absolute top-20 right-4 p-2.5 px-3.5 rounded-xl bg-stone-950/90 backdrop-blur-md border border-stone-800 text-left shadow-xl">
-                  <div className="flex items-center gap-2.5">
-                    <div className="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
-                      <Users className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <div className="text-stone-100 font-black text-sm leading-tight">{profile.clientsTransformed}+</div>
-                      <div className="text-[10px] text-stone-400 uppercase tracking-wider font-bold">Athletes Built</div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Free Trial Guarantee Tag */}
