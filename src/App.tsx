@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
-  const { profile, openTrialModal, openBMICalculator, currentThemeConfig } = useTrainer();
+  const { profile, openTrialModal, openBMICalculator, currentThemeConfig, colorMode } = useTrainer();
   const [activeSection, setActiveSection] = useState<string>('home');
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-stone-100 flex flex-col selection:bg-yellow-400 selection:text-black">
+    <div data-color-mode={colorMode} className="min-h-screen bg-black text-stone-100 flex flex-col selection:bg-yellow-400 selection:text-black">
       {/* Sticky Top Navbar */}
       <Navbar />
 

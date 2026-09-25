@@ -37,6 +37,7 @@ import {
 } from '../lib/firebaseService';
 
 export type CurrencyType = 'INR' | 'USD' | 'EUR' | 'GBP';
+export type ColorMode = 'dark' | 'light';
 
 interface TrainerContextType {
   profile: TrainerProfile;
@@ -55,6 +56,8 @@ interface TrainerContextType {
   theme: ThemeId;
   setTheme: (t: ThemeId) => void;
   currentThemeConfig: ThemeConfig;
+  colorMode: ColorMode;
+  setColorMode: (mode: ColorMode) => void;
   currency: CurrencyType;
   setCurrency: (c: CurrencyType) => void;
   formatPrice: (priceINR: number, priceUSD: number) => string;
@@ -77,6 +80,7 @@ const LOCAL_STORAGE_KEY = 'apex_gym_trainer_profile_v16';
 const LOCAL_STORAGE_PASSES_KEY = 'apex_gym_trainer_passes_v16';
 const LOCAL_STORAGE_CURRENCY_KEY = 'apex_gym_currency_v16';
 const LOCAL_STORAGE_THEME_KEY = 'apex_gym_theme_yellow_v16';
+const LOCAL_STORAGE_COLOR_MODE_KEY = 'apex_gym_color_mode_v1';
 const LOCAL_STORAGE_TESTIMONIALS_KEY = 'apex_gym_testimonials_cleared_v16';
 const LOCAL_STORAGE_TRANSFORMATIONS_KEY = 'apex_gym_transformations_v16';
 const LOCAL_STORAGE_GALLERY_KEY = 'apex_gym_gallery_v16';
@@ -196,6 +200,15 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
     return 'yellow';
   });
 
+  const [colorMode, setColorMode] = useState<ColorMode>(() => {
+    try {
+      const saved = localStorage.getItem(LOCAL_STORAGE_COLOR_MODE_KEY);
+      return saved === 'light' ? 'light' : 'dark';
+    } catch {
+      return 'dark';
+    }
+  });
+
   const [currency, setCurrencyState] = useState<CurrencyType>(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_CURRENCY_KEY) as CurrencyType;
@@ -288,6 +301,15 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
       console.error('Failed to persist theme', e);
     }
   }, [theme]);
+
+  useEffect(() => {
+    document.documentElement.dataset.colorMode = colorMode;
+    try {
+      localStorage.setItem(LOCAL_STORAGE_COLOR_MODE_KEY, colorMode);
+    } catch (e) {
+      console.error('Failed to persist color mode', e);
+    }
+  }, [colorMode]);
 
   useEffect(() => {
     try {
@@ -420,6 +442,8 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
         theme,
         setTheme,
         currentThemeConfig,
+        colorMode,
+        setColorMode,
         currency,
         setCurrency,
         formatPrice,

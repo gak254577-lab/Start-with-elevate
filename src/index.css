@@ -6,6 +6,48 @@
     background-color: #000000;
     color: #f5f5f4;
   }
+
+  /* Keep the existing dark-first utility styles readable in the optional light mode. */
+  [data-color-mode='light'] {
+    color-scheme: light;
+    background-color: #f8fafc;
+    color: #1c1917;
+  }
+
+  [data-color-mode='light'] body {
+    background-color: #f8fafc;
+    color: #1c1917;
+  }
+
+  [data-color-mode='light'] [class*='bg-black'],
+  [data-color-mode='light'] [class*='bg-stone-950'],
+  [data-color-mode='light'] [class*='bg-stone-900'] {
+    background-color: #ffffff !important;
+  }
+
+  [data-color-mode='light'] [class*='bg-stone-800'] {
+    background-color: #e7e5e4 !important;
+  }
+
+  [data-color-mode='light'] [class*='text-stone-100'],
+  [data-color-mode='light'] [class*='text-stone-200'],
+  [data-color-mode='light'] [class*='text-stone-300'] {
+    color: #292524 !important;
+  }
+
+  [data-color-mode='light'] [class*='text-stone-400'],
+  [data-color-mode='light'] [class*='text-stone-500'] {
+    color: #57534e !important;
+  }
+
+  [data-color-mode='light'] [class*='border-stone-800'],
+  [data-color-mode='light'] [class*='border-stone-900'] {
+    border-color: #d6d3d1 !important;
+  }
+
+  [data-color-mode='light'] [class*='shadow-black'] {
+    --tw-shadow-color: rgb(120 113 108 / 0.18) !important;
+  }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
@@ -45,4 +87,3 @@
   scrollbar-width: none;  /* Firefox */
   -webkit-overflow-scrolling: touch;
 }
-

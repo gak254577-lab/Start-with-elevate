@@ -6,6 +6,8 @@ import {
   Calendar,
   Menu,
   X,
+  Sun,
+  Moon,
 } from 'lucide-react';
 import { WaveFitnessLogo } from './WaveFitnessLogo';
 
@@ -14,6 +16,8 @@ export const Navbar: React.FC = () => {
     profile,
     openTrialModal,
     currentThemeConfig,
+    colorMode,
+    setColorMode,
   } = useTrainer();
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -124,6 +128,19 @@ export const Navbar: React.FC = () => {
 
           {/* Action CTAs */}
           <div className="hidden sm:flex items-center gap-3">
+            {/* Dark/light mode toggle */}
+            <button
+              type="button"
+              onClick={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')}
+              className="p-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-200 border border-stone-800 transition-colors flex items-center justify-center group"
+              title={`Switch to ${colorMode === 'dark' ? 'light' : 'dark'} mode`}
+              aria-label={`Switch to ${colorMode === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {colorMode === 'dark'
+                ? <Sun className="w-4 h-4 text-yellow-300 group-hover:rotate-45 transition-transform" />
+                : <Moon className="w-4 h-4 text-indigo-500 group-hover:-rotate-12 transition-transform" />}
+            </button>
+
             {/* Click to call */}
             <a
               href={`tel:${profile.phone.replace(/[^0-9+]/g, '')}`}
@@ -160,6 +177,15 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile menu trigger */}
           <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setColorMode(colorMode === 'dark' ? 'light' : 'dark')}
+              className="p-2 rounded-xl bg-stone-900 text-stone-200 border border-stone-800 hover:bg-stone-800"
+              title={`Switch to ${colorMode === 'dark' ? 'light' : 'dark'} mode`}
+              aria-label={`Switch to ${colorMode === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {colorMode === 'dark' ? <Sun className="w-4 h-4 text-yellow-300" /> : <Moon className="w-4 h-4 text-indigo-500" />}
+            </button>
             <button
               onClick={handleScrollToContact}
               className={`sm:hidden text-xs font-black px-3 py-1.5 rounded-lg shadow ${currentThemeConfig.buttonClass}`}
