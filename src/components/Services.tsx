@@ -106,7 +106,7 @@ export const Services: React.FC = () => {
               <div className="relative aspect-[16/10] overflow-hidden bg-stone-950">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} at Start With Elevate 77`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />

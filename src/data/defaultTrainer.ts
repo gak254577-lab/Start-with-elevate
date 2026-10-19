@@ -244,8 +244,8 @@ export const DEFAULT_PRICING_PLANS: PricingPlan[] = [
     ],
     notIncluded: [
       'Continuous nutrition coaching',
-      'Free Wave Fitness Performance T-Shirt & Shaker',
-      'Free Bags and Hydration Drinks',
+      'Branded performance T-shirt and shaker (not included)',
+      'Bags and hydration drinks (not included)',
     ],
     ctaText: 'Book Single Session',
   },
@@ -260,7 +260,7 @@ export const DEFAULT_PRICING_PLANS: PricingPlan[] = [
     badge: 'Popular',
     features: [
       '36x 1-on-1 Personal Training Sessions (3x/week)',
-      'Free Wave Fitness Performance T-Shirt & Shaker',
+      'Branded performance T-shirt and shaker (if included in the package)',
       'Free Bags and Hydration Drinks',
       'Customized Macronutrient & Meal Blueprint',
       'Dedicated WhatsApp Support (Mon-Sat)',
@@ -280,7 +280,7 @@ export const DEFAULT_PRICING_PLANS: PricingPlan[] = [
     badge: 'VIP • 98% Success',
     features: [
       '12x 1-on-1 Personal Training Sessions (3x/week)',
-      'Free Wave Fitness Performance T-Shirt & Shaker',
+      'Start With Elevate 77 branded T-shirt and shaker',
       'Free Bags and Hydration Drinks',
       'Comprehensive Progressive Periodization Protocol',
       'Precision Nutrition Coaching + Weekly Macro Adjustments',
@@ -337,10 +337,10 @@ export const DEFAULT_GALLERY: GalleryItem[] = [
   },
   {
     id: 'gal-4',
-    title: 'Wave Fitness Premium Free-Weights & Racks',
+    title: 'Strength Training Equipment',
     category: 'facility',
     imageUrl: IMAGES.galleryCardioTurf,
-    caption: 'Competition-spec barbells, calibrated plates, and Olympic power racks at Wave Fitness.',
+      caption: 'Explore the equipment and training environment available at Start With Elevate 77.',
   },
   {
     id: 'gal-5',

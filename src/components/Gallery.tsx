@@ -105,7 +105,7 @@ export const Gallery: React.FC = () => {
             >
               <img
                 src={item.imageUrl}
-                alt={item.title}
+                alt={`${item.title} - ${item.caption}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
               />
               
@@ -165,7 +165,7 @@ export const Gallery: React.FC = () => {
             <div className="relative aspect-[16/10] bg-stone-950 flex items-center justify-center">
               <img
                 src={filteredGallery[selectedPhotoIndex].imageUrl}
-                alt={filteredGallery[selectedPhotoIndex].title}
+                alt={`${filteredGallery[selectedPhotoIndex].title} - ${filteredGallery[selectedPhotoIndex].caption}`}
                 className="w-full h-full object-contain"
               />
             </div>
