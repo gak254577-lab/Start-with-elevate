@@ -18,7 +18,7 @@ export const DEFAULT_TRAINER_PROFILE: TrainerProfile = {
   name: 'START WITH ELEVATE 77',
   tagline: 'Elite Strength & Body Transformation Specialist',
   heroHeadline: 'Transform Your Body with START WITH ELEVATE 77',
-  heroSubheadline: 'Science-backed personal training, bespoke nutrition coaching, and unstoppable habit formation engineered to build your strongest, leanest physique with Shubham Singh.',
+  heroSubheadline: 'Build strength, lose body fat, and improve your fitness with personalized training and nutrition coaching from Shubham Singh at Start With Elevate 77 in Ghaziabad. Explore fitness coaching options and book a free trial session.',
   gymName: 'Shubham Singh',
   yearsOfExperience: 8,
   clientsTransformed: 480,
