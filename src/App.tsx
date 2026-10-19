@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TrainerProvider, useTrainer } from './context/TrainerContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -14,14 +14,31 @@ import { Gallery } from './components/Gallery';
 import { FAQ } from './components/FAQ';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { TrialBookingModal } from './components/TrialBookingModal';
-import { BMICalculatorModal } from './components/BMICalculatorModal';
+const TrialBookingModal = lazy(() =>
+  import('./components/TrialBookingModal').then((m) => ({
+    default: m.TrialBookingModal,
+  }))
+);
+
+const BMICalculatorModal = lazy(() =>
+  import('./components/BMICalculatorModal').then((m) => ({
+    default: m.BMICalculatorModal,
+  }))
+);
 import {
   MessageSquare
 } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
-  const { profile, openTrialModal, openBMICalculator, currentThemeConfig, colorMode } = useTrainer();
+  const {
+  profile,
+  openTrialModal,
+  openBMICalculator,
+  currentThemeConfig,
+  colorMode,
+  isTrialModalOpen,
+  isBMICalculatorOpen,
+} = useTrainer();
   const [activeSection, setActiveSection] = useState<string>('home');
 
   useEffect(() => {
@@ -97,8 +114,17 @@ const MainLayout: React.FC = () => {
       <Footer />
 
       {/* Global Modals & Drawers */}
-      <TrialBookingModal />
-      <BMICalculatorModal />
+      {isTrialModalOpen && (
+        <Suspense fallback={null}>
+          <TrialBookingModal />
+        </Suspense>
+      )}
+
+      {isBMICalculatorOpen && (
+        <Suspense fallback={null}>
+          <BMICalculatorModal />
+        </Suspense>
+      )}
 
       {/* Floating Dark Outlined WhatsApp Button */}
       <a

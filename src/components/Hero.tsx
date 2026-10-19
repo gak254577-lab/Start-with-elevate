@@ -134,6 +134,8 @@ export const Hero: React.FC = () => {
                 <img
                   src={profile.trainerHeroImage}
                   alt={`${profile.name} - Head Coach`}
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-contain object-center filter brightness-95 contrast-105"
                 />
 
