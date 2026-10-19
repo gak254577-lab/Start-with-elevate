@@ -55,7 +55,7 @@ export const Services: React.FC = () => {
   return (
     <section id="services" className="py-20 lg:py-28 bg-stone-950 border-b border-stone-800/80 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
           <div
@@ -69,12 +69,14 @@ export const Services: React.FC = () => {
             <Zap className="w-3.5 h-3.5" />
             <span>Training Programs</span>
           </div>
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-100 tracking-tight">
-            Specialized Coaching Built For Results
+            Personal Training & Fitness Coaching in Ghaziabad
           </h2>
           <p className="text-stone-400 text-base sm:text-lg">
-            Choose the coaching format that fits your lifestyle. Every service includes form mastery, dedicated progressive planning, and habit support.
+            Explore personal training, weight loss coaching, strength and muscle-building programs, nutrition guidance, and online fitness coaching with Shubham Singh at Start With Elevate 77. Choose a program that fits your goals and lifestyle.
           </p>
+
         </div>
 
         {/* Category Filter Pills */}
@@ -83,11 +85,10 @@ export const Services: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all border ${
-                selectedCategory === cat.id
+              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all border ${selectedCategory === cat.id
                   ? `${currentThemeConfig.buttonClass} shadow-md`
                   : 'bg-stone-900/90 text-stone-400 hover:text-stone-100 hover:bg-stone-800 border-stone-800'
-              }`}
+                }`}
             >
               {cat.label}
             </button>
@@ -109,7 +110,7 @@ export const Services: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent" />
-                
+
                 {/* Top Badges */}
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                   <span className="p-2 rounded-lg bg-stone-950/80 backdrop-blur-sm border border-stone-800">
@@ -208,7 +209,7 @@ export const Services: React.FC = () => {
 
             <div className="p-6 space-y-4">
               <p className="text-sm text-stone-300 leading-relaxed">{activeModalService.fullDescription}</p>
-              
+
               <div className="p-3.5 rounded-xl bg-stone-950 border border-stone-800 text-xs space-y-1.5">
                 <div className="flex justify-between">
                   <span className="text-stone-400">Duration:</span>

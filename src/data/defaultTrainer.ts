@@ -18,7 +18,8 @@ export const DEFAULT_TRAINER_PROFILE: TrainerProfile = {
   name: 'START WITH ELEVATE 77',
   tagline: 'Elite Strength & Body Transformation Specialist',
   heroHeadline: 'Transform Your Body with START WITH ELEVATE 77',
-heroSubheadline: 'Build strength, lose body fat, and improve your fitness with personalized training and nutrition coaching from Shubham Singh at Start With Elevate 77 in Ghaziabad. Explore fitness coaching options and book a free trial session.',  gymName: 'Shubham Singh',
+  heroSubheadline: 'Build strength, lose body fat,and improve your fitness with personalized training and nutrition coaching from Shubham Singh at Start With Elevate 77 in Ghaziabad. Explore fitness coaching options and book a free trial session.',
+  gymName: 'Shubham Singh',
   yearsOfExperience: 8,
   clientsTransformed: 480,
   rating: 5.0,
@@ -37,8 +38,8 @@ heroSubheadline: 'Build strength, lose body fat, and improve your fitness with p
     saturday: 'Saturday: 6:00 AM - 10:00 PM',
     sunday: 'CLOSED',
   },
-  googleMapEmbedUrl: 'https://maps.google.com/maps?q=Wave+Fitness+Plot+No+95+Govindvihar+Om+Shanti+Puram+Swaran+Jayanti+Puram+Govindpuram+Ghaziabad+Uttar+Pradesh+201013&t=&z=15&ie=UTF8&iwloc=&output=embed',
-  googleMapDirectionsUrl: 'https://www.google.com/maps/search/?api=1&query=Wave+Fitness+Plot+No+95+Govindvihar+Om+Shanti+Puram+Swaran+Jayanti+Puram+Govindpuram+Ghaziabad+201013',
+  googleMapEmbedUrl: 'https://maps.google.com/maps?q=Start+With+Elevate+77+Plot+No+95+Govindvihar+Om+Shanti+Puram+Govindpuram+Ghaziabad+Uttar+Pradesh+201013&z=15&output=embed',
+  googleMapDirectionsUrl: 'https://www.google.com/maps/search/?api=1&query=Start+With+Elevate+77+Plot+No+95+Govindvihar+Om+Shanti+Puram+Govindpuram+Ghaziabad+Uttar+Pradesh+201013',
   bioParagraphs: [
     'With over 8 years of coaching athletes, busy professionals, and fitness enthusiasts, I have learned that real physical transformation does not come from extreme crash diets or random workouts—it comes from biomechanically sound training, progressive overload, and structured nutritional discipline.',
     'I specialize in Fat Loss & Body Recomposition, Hypertrophy, Functional Strength, and Sustainable Macro periodization. Whether you want to shed stubborn fat, build dense muscle, or improve your lifting form, my coaching is personalized to your exact goals and lifestyle.',
@@ -122,7 +123,7 @@ export const DEFAULT_SERVICES: ServiceOffering[] = [
     id: 'srv-1',
     title: '1-on-1 Private Personal Training',
     category: 'personal',
-    shortDescription: 'Exclusive 60-minute in-person sessions with complete individualized form correction, program periodization, and continuous motivation.',
+    shortDescription: 'Personalized one-on-one personal training focused on exercise technique, structured workouts, strength development, and progress toward your fitness goals.',
     fullDescription: 'Experience elite level private coaching customized to your exact biomechanics. Every session is designed to maximize progressive overload, refine technique on compound lifts, and optimize recovery.',
     highlights: [
       'Comprehensive initial posture & mobility assessment',
@@ -140,7 +141,7 @@ export const DEFAULT_SERVICES: ServiceOffering[] = [
     id: 'srv-2',
     title: 'Fat Loss & Body Recomposition',
     category: 'weight-loss',
-    shortDescription: 'Targeted caloric deficit protocols combined with muscle-preserving resistance workouts to burn fat while sculpting lean definition.',
+    shortDescription: 'Build a sustainable fat-loss routine with resistance training, activity planning, and practical nutrition guidance tailored to your fitness level.',
     fullDescription: 'Say goodbye to cardio-only crash routines. Our body recomposition system stimulates high metabolic expenditure while preserving lean metabolically active muscle tissue.',
     highlights: [
       'Metabolic Resistance Training (MRT) protocols',
@@ -158,7 +159,7 @@ export const DEFAULT_SERVICES: ServiceOffering[] = [
     id: 'srv-3',
     title: 'Strength & Hypertrophy Development',
     category: 'strength',
-    shortDescription: 'Structured progressive overload training for building significant muscle density, squat/bench/deadlift numbers, and athletic power.',
+    shortDescription: 'Develop strength and muscle with progressive resistance training, exercise technique coaching, and a structured workout plan matched to your experience.',
     fullDescription: 'Engineered for those who want serious strength milestones. Master compound barbell movements, hypertrophy volume manipulation, and CNS recovery management.',
     highlights: [
       'Periodized strength blocks (Accumulation, Intensification, Peaking)',
@@ -176,7 +177,7 @@ export const DEFAULT_SERVICES: ServiceOffering[] = [
     id: 'srv-4',
     title: 'Nutrition & Metabolic Coaching',
     category: 'nutrition',
-    shortDescription: 'Customized daily calorie, macro, and hydration blueprints tailored to your dietary preferences (vegan, vegetarian, keto, or balanced).',
+    shortDescription: 'Get practical nutrition guidance for your fitness goals, with meal-planning strategies that consider your food preferences, daily routine, and training needs.',
     fullDescription: 'Nutrition accounts for 70% of physical transformation. We build realistic, guilt-free meal frameworks with custom grocery shopping guides and supplement stack advice.',
     highlights: [
       'Custom macro calculations updated every 2-3 weeks',
@@ -193,7 +194,7 @@ export const DEFAULT_SERVICES: ServiceOffering[] = [
     id: 'srv-5',
     title: 'Small Group High-Energy Conditioning',
     category: 'group',
-    shortDescription: 'Intimate 4-6 person semi-private groups delivering high camaraderie, athletic circuits, and competitive motivation.',
+    shortDescription: 'Stay motivated with group fitness sessions combining guided exercises, conditioning, and a workout routine suited to different fitness levels.',
     fullDescription: 'Get the energy of a boutique studio with the personal attention of 1-on-1 training. Great for workout partners, couples, or friends pushing each other.',
     highlights: [
       'Capped at max 6 members per class for safety',
@@ -210,7 +211,7 @@ export const DEFAULT_SERVICES: ServiceOffering[] = [
     id: 'srv-6',
     title: 'Hybrid Online Remote Coaching',
     category: 'online',
-    shortDescription: 'Full custom workout programming delivered via dedicated app with video form checks, weekly strategy calls, and global access.',
+    shortDescription: 'Follow a fitness plan remotely with workout guidance and progress check-ins, subject to the online coaching services available.',
     fullDescription: 'Train wherever you are with Subham Singh in your pocket. Video exercise tutorials, automated rest timers, and direct messaging 6 days a week.',
     highlights: [
       'Interactive mobile workout tracker app access',
@@ -557,13 +558,13 @@ export const DEFAULT_FAQS: FAQItem[] = [
   {
     id: 'faq-1',
     question: 'What happens during my Free Trial Session?',
-    answer: 'Your complimentary 60-minute trial session includes a comprehensive 15-minute fitness & posture assessment, a discussion of your primary physique goals and past injuries, a guided 35-minute tailored workout matching your current fitness level, and a 10-minute roadmap review outlining your custom path to results.',
+    answer: 'Your free trial is an opportunity to discuss your fitness goals, experience a suitable workout, and learn about the available coaching options. Confirm the session details when booking.',
     category: 'Trial & Getting Started',
   },
   {
     id: 'faq-2',
     question: 'I am a complete beginner and out of shape. Is this suitable for me?',
-    answer: 'Absolutely! Over 60% of our clients begin with zero prior gym experience or after long sedentary periods. We never throw beginners into intimidating, exhausting routines. We start with fundamental movement patterns, joint mobilization, and manageable weights to build your confidence safely.',
+    answer: 'Yes, beginners can discuss their goals and experience level with the trainer. Workouts can be adapted to your current ability and progressed as your fitness improves.',
     category: 'Experience & Fitness Level',
   },
   {
@@ -587,7 +588,7 @@ export const DEFAULT_FAQS: FAQItem[] = [
   {
     id: 'faq-6',
     question: 'How quickly can I expect to see visible results?',
-    answer: 'Most clients notice significant increases in energy and stamina within the first 10 days, posture improvement by week 2, and measurable reductions in body fat or strength increases within 3 to 4 weeks when adhering to the prescribed workout and nutrition plan.',
+    answer: 'Results vary depending on your starting point, training consistency, nutrition, recovery, and individual circumstances. A structured plan and regular progress reviews can help you work toward realistic fitness goals.',
     category: 'Results',
   },
 ];
