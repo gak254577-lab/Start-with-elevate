@@ -10,14 +10,14 @@
 
 export const IMAGES = {
   // Trainer Profile & Main Sections
-  trainerHero: '/images/hero-trainer.jpg',
-  trainerAbout: '/images/about-trainer.jpg',
+  trainerHero: '/images/hero-trainer-optimized.jpg',
+  trainerAbout: '/images/about-trainer-optimized.jpg',
 
   // Service Offerings
   servicePersonalTraining: '/images/service-personal-training.jpg',
   serviceStrengthHypertrophy: '/images/service-strength-hypertrophy.jpg',
   serviceFatLoss: '/images/service-fat-loss.jpg',
-  serviceNutrition: '/images/service-nutrition.jpg',
+  serviceNutrition: '/images/service-nutrition-optimized.jpg',
   serviceAthleticConditioning: '/images/service-athletic-conditioning.jpg',
   serviceRehabMobility: '/images/service-rehab-mobility.jpg',
 
