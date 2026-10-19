@@ -104,6 +104,7 @@ export const TrainerProvider: React.FC<{ children: React.ReactNode }> = ({ child
         }
         parsed.name = DEFAULT_TRAINER_PROFILE.name;
         parsed.heroHeadline = DEFAULT_TRAINER_PROFILE.heroHeadline;
+        parsed.heroSubheadline = DEFAULT_TRAINER_PROFILE.heroSubheadline;
         if (parsed.gymName === 'Wave Fitness' || !parsed.gymName) {
           parsed.gymName = 'Shubham Singh';
         }

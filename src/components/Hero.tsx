@@ -33,16 +33,16 @@ export const Hero: React.FC = () => {
         style={{ backgroundColor: currentThemeConfig.primaryHex }}
       />
       <div className="absolute top-20 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-[130px] pointer-events-none" />
-      
+
       {/* High tech grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#29252418_1px,transparent_1px),linear-gradient(to_bottom,#29252418_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
-          
+
           {/* Left Column: Headlines & CTAs */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
-            
+
             {/* Top Badge with Live Status */}
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-900/90 border text-xs font-bold tracking-wide shadow-sm" style={{ borderColor: `${currentThemeConfig.primaryHex}40` }}>
@@ -58,17 +58,19 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Main Headline */}
+
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-black text-stone-100 tracking-tight leading-[1.1]">
-              Sculpt Your Strongest, <br className="hidden sm:inline" />
+              Personal Training with <br className="hidden sm:inline" />
               <span
                 className="bg-clip-text text-transparent bg-gradient-to-r"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${currentThemeConfig.primaryHex}, #ffffff)`
                 }}
               >
-                Leanest Physique
+                Shubham Singh
               </span>
             </h1>
+
 
             {/* Subheadline */}
             <p className="text-sm sm:text-lg text-stone-300 font-normal leading-relaxed max-w-2xl">
@@ -121,7 +123,7 @@ export const Hero: React.FC = () => {
           {/* Right Column: High-End Athlete Visual Card */}
           <div className="lg:col-span-5 relative flex justify-center">
             <div className="relative w-full max-w-md">
-              
+
               {/* Glowing decorative border */}
               <div
                 className="absolute -inset-2 rounded-3xl opacity-40 blur-lg transition duration-700 -z-10"
@@ -134,7 +136,7 @@ export const Hero: React.FC = () => {
                   alt={`${profile.name} - Head Coach`}
                   className="w-full h-full object-contain object-center filter brightness-95 contrast-105"
                 />
-                
+
                 {/* Dark bottom gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/25 to-transparent" />
 
